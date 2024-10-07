@@ -25,3 +25,8 @@ def attack(board, x, y):
     print()
     print("\033[32m" + "Touché !" + "\033[0m" if hit else "\033[31m" + "Raté !" + "\033[0m")
     print()
+    
+    
+# \033[0m   : Reset
+# \033[31m  : Red
+# \033[32m  : Green
