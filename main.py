@@ -1,6 +1,3 @@
-from colorama import Fore
-
-
 def gameNotEnded(board):
     for i in board:
         for j in i:
@@ -17,14 +14,14 @@ def attack(board, x, y):
         for j in range(len(board[i])-1):
             if(i == x and j == y):
                 if(board[i][j] == 1):
-                    print(Fore.GREEN + "X", end = " ")
+                    print("\033[32m" + "X", end = " ")
                     board[i][j] = 0
                     hit = True
                 else:
-                    print(Fore.RED + str(board[y][x]), end = " ")
-                print(Fore.RESET, end = "")
+                    print("\033[31m" + str(board[x][y]), end = " ")
+                print("\033[0m", end = "")
             else:
                 print(board[i][j], end=" ")     
     print()
-    print(Fore.GREEN + "Touché !" + Fore.RESET if hit else Fore.RED + "Raté !" + Fore.RESET)
+    print("\033[32m" + "Touché !" + "\033[0m" if hit else "\033[31m" + "Raté !" + "\033[0m")
     print()
