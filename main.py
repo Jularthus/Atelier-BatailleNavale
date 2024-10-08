@@ -9,8 +9,8 @@ board = [
 ]
 
 def play():
-    x = int(input("Choissisez une coordonnée X : "))
-    y = int(input("Choissisez une coordonnée Y : "))
+    x = int(input(f"Choissisez une coordonnée X comprise entre 0 et {len(board[0])-1} : "))
+    y = int(input(f"Choissisez une coordonnée Y comprise entre 0 et {len(board)-1} : "))
     
     attack(board, x, y)
     

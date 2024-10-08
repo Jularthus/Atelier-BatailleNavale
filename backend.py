@@ -7,11 +7,14 @@ def gameNotEnded(board):
 
 def attack(board, x, y):
     (x,y) = (y,x)
+    if(x < 0 or x >= len(board) or y < 0 or y >= len(board[0])):
+        print("\033[31m" + "Coordonnées invalides !" + "\033[0m")
+        return
     hit = False
     for i in range(len(board)):
         print()
         print("Ligne " + str(i) + ":", end =" ")
-        for j in range(len(board[i])-1):
+        for j in range(len(board[i])):
             if(i == x and j == y):
                 if(board[i][j] == 1):
                     print("\033[32m" + "X", end = " ")
