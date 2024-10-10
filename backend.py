@@ -5,6 +5,20 @@ def gameNotEnded(board):
                 return True
     return False
 
+def getSizeX(board):
+    return len(board[0])-1
+
+def getSizeY(board):
+    return len(board)-1
+
+def printBoard(board):
+    for i in range(len(board)):
+        print()
+        print("Ligne " + str(i) + ":", end =" ")
+        for j in range(len(board[i])):
+            print(str(board[i][j]), end = " ")
+    print()
+
 def attack(board, x, y):
     (x,y) = (y,x)
     if(x < 0 or x >= len(board) or y < 0 or y >= len(board[0])):
