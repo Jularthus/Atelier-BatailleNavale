@@ -5,10 +5,10 @@ def jeuEnCours(board):
                 return True
     return False
 
-def longueur(board):
+def tailleX(board):
     return len(board[0])-1
 
-def largeur(board):
+def tailleY(board):
     return len(board)-1
 
 def afficherTableau(board):

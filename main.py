@@ -1,4 +1,5 @@
 from backend import *
+from os import system
 
 # On initialise le tableau de jeu, 0 est vide, 1 est un bateau
 tableau = [
@@ -11,8 +12,8 @@ tableau = [
 ]
 
 # On récupère la taille du tableau de jeu
-longueur = longueur(tableau)
-largeur = largeur(tableau)
+longueur = tailleX(tableau)
+largeur = tailleY(tableau)
 
 # On l'affiche une première fois pour commencer le jeu
 afficherTableau(tableau)
@@ -21,6 +22,7 @@ afficherTableau(tableau)
 def play():
     y = int(input(f"Choissisez une coordonnée Y comprise entre 0 et {largeur} : "))
     x = int(input(f"Choissisez une coordonnée X comprise entre 0 et {longueur} : "))
+    system("clear")
     attaquer(tableau, x, y)
     
 # On fait une boucle pour continuer à jouer tant que la partie n'est pas terminée
